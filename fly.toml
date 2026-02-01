@@ -1,13 +1,23 @@
-app = '23-112'
-primary_region = 'iad'
+# fly.toml app configuration file generated for 222222357 on 2026-02-01T07:52:11Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = '222222357'
+primary_region = 'ams'
 
 [build]
 
-min_machines_running = 1
-processes = ['app']
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
 
 [[vm]]
-  memory = '256mb'
+  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 256
