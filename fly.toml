@@ -1,0 +1,13 @@
+app = '23-112'
+primary_region = 'iad'
+
+[build]
+
+min_machines_running = 1
+processes = ['app']
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 256
